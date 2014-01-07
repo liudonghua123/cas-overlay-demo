@@ -28,7 +28,7 @@
     <description>
     	Configuration for the default TicketRegistry which stores the tickets in-memory and cleans them out as specified intervals.
     </description>
-
+<!-- 
   <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.DefaultTicketRegistry" />
 	
 	<bean id="ticketRegistryCleaner" class="org.jasig.cas.ticket.registry.support.DefaultTicketRegistryCleaner"
@@ -43,8 +43,7 @@
 		p:jobDetail-ref="jobDetailTicketRegistryCleaner"
 		p:startDelay="20000"
 		p:repeatInterval="5000000" />
-
-<!--
+-->
     <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.MemCacheTicketRegistry">
         <constructor-arg index="0" ref="memcachedClient" />
     
@@ -66,6 +65,5 @@
     <bean id="kryoTranscoder" class="org.jasig.cas.ticket.registry.support.kryo.KryoTranscoder" init-method="initialize">
         <constructor-arg index="0" value="8192" />
     </bean>
--->
 
 </beans>
